@@ -1,4 +1,4 @@
-# Python "a la vena"
+# Python "A la vena"
 
 ## 1. Entrada y Salida Básica
 1. La sentencia `print()`
