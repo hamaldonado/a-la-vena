@@ -18,3 +18,9 @@ def move_left(lines):
 
 def move_to_column(column):
     print(f"\033[{column}G")
+
+def hide_cursor():
+    print("\033[?25l")  # Ocultar Cursor
+    
+def show_cursor():
+    print("\033[?25h")  # Mostrar Cursor
