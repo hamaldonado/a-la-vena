@@ -1,10 +1,11 @@
 # Python "A la vena"
 
-## 1. Entrada y Salida Básica
+## 0. Entrada y Salida Básica
 1. La sentencia `print()`
 2. La funcion `input()`
+3. Formateando la salida al terminal usando secuencias de escape
 
-## 2. Variables y Tipos de Datos
+## 1. Variables y Tipos de Datos
 1. Definición de variables
 2. Tipos de datos base
     - `str`
@@ -15,12 +16,24 @@
     - El tipo `None`
 3. Comentarios
 
-## 3. Operaciones Básicas 
+## 2. Operaciones Básicas 
 1. Operadores Aritméticos (`+, -, *, /, //, %`)
 2. Precedencia
 3. Operadores de Asignación (`=, +=, -=, *=, /=`)
 4. Operadores de Comparación (`==, <=, <, >, >=, !=`)
 5. Operadores Lógicos (`and, or, not`)
+
+## 3. Strings
+1. Introducción
+2. Creación de Strings
+3. Acceso a las partes de un String
+4. Funciones usadas comunmente con Strings
+  1. `len()`
+  2. `upper()`y `lower()`
+  3. `rstrip()`, `lstrip()` y `strip()`
+5. Formateo se Strings
+  1. La función `format()`
+  2. Uso de `f-strings`  
 
 ## 4. Estructuras de Control
 ### Condicionales
