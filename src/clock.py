@@ -1,5 +1,7 @@
 from datetime import datetime
 import time
+import msvcrt               # Esto sólo funciona en Windows
+import termio as t
 
 numeros = {
     "0": [
@@ -105,24 +107,28 @@ def print_clock(value: str):
         print("")
 
     # Mover cursor 6 lineas hacia arriba
-    print("\033[6A")
+    t.move_up(6)
 
 
 def main():
 
     # Limpiar pantalla
-    print("\033c")
+    t.cls()
 
-    print("\033[?25l")  # Ocultar Cursor
-    #print("\033[?25h")  # Mostrar Cursor
-
+    t.hide_cursor()  # Ocultar Cursor
+   
     while True:
         hora = datetime.strftime(datetime.now(), "%Y/%m/%d %H:%M:%S")
-
         print_clock(hora)
 
         time.sleep(1)
 
+        if msvcrt.kbhit():         # Esto solo funciona en windows
+            t.cls()
+            t.show_cursor()
+            break
+
+    t.show_cursor()
 
 if __name__ == "__main__":
     main()

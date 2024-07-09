@@ -1,18 +1,14 @@
 import time
 import playsound
-
-CLEAR_SCREEN = "\033c"
-REVERSE_RED = "\033[31;7m"
-NORMAL = "\033[0m"
-HIDE_CURSOR = "\033[?25l"
-SHOW_CURSOR = "\033[?25h"
+import termio as t
+from termio import Color
 
 def start_bomb(seconds):
 
-    color = NORMAL
+    color = Color.NORMAL
 
     # Ocultar Cursor
-    print(HIDE_CURSOR)  
+    t.hide_cursor()
 
     while seconds >= 0:
 
@@ -22,7 +18,7 @@ def start_bomb(seconds):
         display = f"{min}:{sec:02}"
 
         if seconds <= 5:
-            color = REVERSE_RED
+            color = Color.B_RED + Color.F_BRIGHT_WHITE
         
         playsound.playsound(u"src/sounds/tick_01.wav", block=False)
 
@@ -33,7 +29,8 @@ def start_bomb(seconds):
         time.sleep(1)
     
     # Reset de color y muestra cursor
-    print(NORMAL, SHOW_CURSOR)  
+    print(Color.NORMAL)
+    t.show_cursor()  
 
     # Estalla la bomba
     print("\nBOOM!")
@@ -43,7 +40,7 @@ def start_bomb(seconds):
 def main():
 
     # Limpiar pantalla
-    print(CLEAR_SCREEN)
+    t.cls()
 
     duration = input("Ingresa la duracion en formato mm:ss -> ")
 

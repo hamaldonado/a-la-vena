@@ -32,9 +32,14 @@ def decode(message, key_value):
     return encode(message, -1 * key_value)
 
 
-if __name__ == "__main__":
+def main():
     msg = input("¿Cual es la frase? -> ")
     #msg = "Nos vemos despues de clase. Te amo."
     encoded_message = encode(msg, 13)
 
     print(f"El mensaje cifrado es: {encoded_message}")
+
+
+if __name__ == "__main__":
+    main()
+    

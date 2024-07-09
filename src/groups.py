@@ -1,5 +1,6 @@
 import random
 
+"""
 def form_groups(names: list, size: int) -> list:
     unselected = list(names)
     group_count = len(names) // size + 1
@@ -20,7 +21,8 @@ def form_groups(names: list, size: int) -> list:
         formed_groups.append(formed_group)
 
     return formed_groups    
-
+"""
+    
 def form_groups(names: list, group_count: int) -> list:
     
     group_size = len(names) // group_count

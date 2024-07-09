@@ -9,7 +9,7 @@ def main():
 
     if num_papas % num_personas == 0:
         reparte = int(num_papas / num_personas)
-        print(f"Está fácil!  A cada persona le corresponde {reparte} papas.")
+        print(f"Está fácil!  A cada persona le corresponde {reparte} papa(s).")
     else:
         print("No te compliques!  Haz puré y asunto resuelto.")
 
