@@ -77,8 +77,6 @@ class KBHit:
         1 : right
         2 : down
         3 : left
-        4 : space
-        5 : esc
         Should not be called in the same program as getch().
         '''
         
@@ -88,12 +86,23 @@ class KBHit:
             vals = [72, 77, 80, 75]
             
         else:
-            c = sys.stdin.read(3)[2]
+            ch = sys.stdin.read(1)
+
+            if ord(ch) == 27:
+                c = sys.stdin.read(2)[1] 
+            else:
+                c = ch
+
+            #buf = sys.stdin.read(3)
+            #c = buf[2]
+            #c = sys.stdin.read(3)[2]
             vals = [65, 67, 66, 68]
-        
+            #print( (ord(buf[0]), ord(buf[1])) )
+            #print(ord(c))
+
         #return vals.index(ord(c.decode('utf-8')))
         if ord(c) not in vals:
-            return -1
+            return ord(c)
          
         return vals.index(ord(c))
         
