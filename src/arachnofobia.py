@@ -18,7 +18,7 @@ def draw_scenary():
     floor = "^" * 50
 
     t.cls()
-    t.locate(1,1); print("A R A C H N O F O B I A".center(50))
+    t.locate(1,1); print("A R A C N O F O B I A".center(50))
     t.locate(2,1); print(ceiling)
     t.locate(22,1); print(floor)
 
@@ -221,7 +221,7 @@ def main():
 
             win = check_winning_condition(spiders_vpos)
             if win:
-                t.locate(12,1); print("YOU WIN!".center(50, " "))
+                t.locate(12,1); print("GANASTE!".center(50, " "))
                 break
 
             tick = 0

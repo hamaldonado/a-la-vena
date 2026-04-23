@@ -1,4 +1,6 @@
 import turtle as t
+import os
+
 playerAscore=0
 playerBscore=0
   

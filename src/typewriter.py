@@ -11,7 +11,7 @@ def main():
                             block=False)
         
         print(letter, end="", flush=True)
-        time.sleep(0.15)
+        time.sleep(0.20)
 
     print("")
 

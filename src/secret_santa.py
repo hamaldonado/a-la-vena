@@ -14,6 +14,22 @@ def secret_santa(names: list) -> dict:
 
 
 if __name__ == "__main__":
-    names = ("Pepe", "Jorge", "Luis", "Manuel", "Luana", "Sofia", "Ana", "Raquel")
-    friends = secret_santa(names)
-    print(friends)
+
+    print("Secret Santa\n")
+    print("Escribe la lista de participantes para el sorteo, uno por línea.  Cuando termines, escribe 'listo'.")
+
+    names = set()
+    
+    while True:
+        name = input()
+        if name == "listo":
+            break
+        names.add(name)
+
+    pairs = secret_santa(names)
+
+    print("\nLos amigos secretos son:\n")
+
+    for pair in pairs:
+        print(f"  - {pair} le regala a {pairs[pair]}")
+    
