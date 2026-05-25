@@ -1,7 +1,8 @@
 # https://en.wikipedia.org/wiki/ANSI_escape_code#SGR
 
 class Color:
-    """BLACK = 30
+    """
+    BLACK = 30
     RED = 31
     GREEN = 32
     YELLOW = 33
@@ -17,7 +18,8 @@ class Color:
     BRIGHT_BLUE = 94
     BRIGHT_MAGENTA = 95
     BRIGHT_CYAN = 96
-    BRIGHT_WHITE = 97"""
+    BRIGHT_WHITE = 97
+    """
 
     F_BLACK = f"\033[30m"
     F_RED = f"\033[31m"
