@@ -9,7 +9,7 @@
 import time
 import random
 import math
-from termio import cls, locate
+from termio import cls, locate, Color, Attr
 
 TANK = [
         "  ____ ",
@@ -33,21 +33,21 @@ def draw_scenery():
     cls()
     
     # Titulo
-    locate(1, 1); print("AL OESTE DE TOBRUK".center(120))
+    locate(1, 1); print(f"{Color.F_CYAN}{Attr.INVERT}{Attr.BOLD} AL OESTE DE TOBRUK {Attr.NORMAL}{Color.NORMAL}".center(150))
     
     # Terreno
     locate(24, 1); print("^"*120)
 
     # Tobruk
-    locate(21, 113); print(TOBRUK[0])
-    locate(22, 113); print(TOBRUK[1])
-    locate(23, 113); print(TOBRUK[2])
+    locate(21, 113); print(f"{Color.F_BLUE}{TOBRUK[0]}")
+    locate(22, 113); print(f"{Color.F_BLUE}{TOBRUK[1]}")
+    locate(23, 113); print(f"{Color.F_BLUE}{TOBRUK[2]}{Color.NORMAL}")
 
 
 def draw_tank(column):
-    locate(21, column); print(TANK[0])
-    locate(22, column); print(TANK[1])
-    locate(23, column); print(TANK[2])
+    locate(21, column); print(f"{Color.F_GREEN}{TANK[0]}")
+    locate(22, column); print(f"{Color.F_GREEN}{TANK[1]}")
+    locate(23, column); print(f"{Color.F_GREEN}{TANK[2]}{Color.NORMAL}")
 
 
 def erase_tank(column):
@@ -60,20 +60,20 @@ def erase_tank(column):
 
 def explode_tank(column):
 
-    locate(21, column); print(EXPLOSION[0])
-    locate(22, column); print(EXPLOSION[1])
-    locate(23, column); print(EXPLOSION[2])
+    locate(21, column); print(f"{Color.F_RED}{EXPLOSION[0]}")
+    locate(22, column); print(f"{Color.F_RED}{EXPLOSION[1]}")
+    locate(23, column); print(f"{Color.F_RED}{EXPLOSION[2]}{Color.NORMAL}")
 
 
 def end_game(msg):
     locate (12, 55)
-    print(msg)
+    print(f"{Color.F_CYAN}{msg}{Color.NORMAL}")
 
 
 def set_tank(available_tanks):
     draw_tank(1)
     
-    locate(25, 1); print(f"TANQUES RESTANTES: {available_tanks:02}")
+    locate(25, 1); print(f"{Color.F_YELLOW}TANQUES RESTANTES: {available_tanks:02}{Color.NORMAL}")
     
 
 def advance_tank(current_position):
@@ -89,7 +89,7 @@ def advance_tank(current_position):
 
 def load_bullet(available_bullets):
     locate(22, 116); print("°")
-    locate(25, 102); print(f"BALAS RESTANTES: {available_bullets - 1:02}")
+    locate(25, 102); print(f"{Color.F_YELLOW}BALAS RESTANTES: {available_bullets - 1:02}{Color.NORMAL}")
     
     return available_bullets - 1
     
